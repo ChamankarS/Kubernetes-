@@ -1,7 +1,50 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: frontend-deployment
+# spec:
+#   replicas: 3
+#   selector:
+#     matchLabels:
+#       app: myapp
+#       tier: frontend
+#   template:
+#     metadata:
+#       name: nginx
+#       labels:
+#         app: myapp
+#         tier: frontend
+#   spec:
+#     containers:
+#     - name: nginx
+#       image: nginx
+#       ports:
+#       - containerPort: 80
+
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: frontend-service
+# spec:
+#   type: NodePort
+#   selector:
+#     app: myapp
+#     tier: frontend
+#   ports:
+#   - port: 80
+#     targetPort: 80
+#     nodePort: 30001  # Choose a port number within the range 30000-32767
+
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend-deployment
+  labels:
+    app: myapp
+    tier: frontend
 spec:
   replicas: 3
   selector:
@@ -15,10 +58,29 @@ spec:
         tier: frontend
     spec:
       containers:
-      - name: myapp-cont
-        image: rajatpzade/sample:latest
+      - name: nginx
+        image: nginx
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 10
 
 ---
 apiVersion: v1
@@ -33,4 +95,4 @@ spec:
   ports:
   - port: 80
     targetPort: 80
-    nodePort: 30000  # Choose a port number within the range 30000-32767
+    nodePort: 30001  # You can remove this line to let Kubernetes choose the port

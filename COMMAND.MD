@@ -84,6 +84,10 @@ kubectl rollout undo <deployment_name>
 ```
 kubectl create deploy <deploy_name> --image=nginx --dry-run=client -o yaml > deploy.yml
 ```
+8. To get labels
+```
+kubectl get pod --show-labels 
+```
 
 ---
 ## Manifest 
