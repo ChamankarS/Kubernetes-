@@ -43,9 +43,9 @@ kubectl describe pod my-first-pod
 ```
   ## Kubernetes Object 
 
-   1. Pods -smallest deployment unit of the k8s 
-   2. Nodes-worker nodes
-   3. service-Expose application outside the cluster/conatiner
+   1. Pods - smallest deployment unit of the k8s 
+   2. Nodes - worker nodes
+   3. Service - Expose application outside the cluster/conatiner
       * ClusterIP -> interal communication inside the cluster
       * Nodeport -> expose app outside the cluster
       * Loadbalancer -> expose app outside the cluster
