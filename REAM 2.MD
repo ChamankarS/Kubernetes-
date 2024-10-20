@@ -29,7 +29,10 @@ kubectl get -o wide pods  #details
 ```
 kubectl get -o wide nodes 
 ```
+```
+kubectl explain rc  #detail info about particular object
 
+```
 ```
 kubectl describe pod my-first-pod
 ```
