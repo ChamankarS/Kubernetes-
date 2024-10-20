@@ -52,8 +52,16 @@ kubectl describe pod my-first-pod
    4. Namespace
    5. Replicaset
    ## Saveral way to scale the pod
-   1.Update the yaml file
-   2.
+   1. Update the yaml file
+   2. Apply changes on the live object
+```
+ kubectl edit <pod-name>      #shift+A
+```
+   3. Update using scale command
+   ```
+ kubectl scale --replicas=5 <pod_name>
+```
+
    6. Deployement
    7. DaemonSet
    8. statefulset
