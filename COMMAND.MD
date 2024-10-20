@@ -26,21 +26,18 @@ kubectl get pods
 ```
 kubectl get -o wide pods  #details
 ```
+ 
 ```
 kubectl get -o wide nodes 
 ```
 ```
 kubectl explain rc  #detail info about particular object
 ```
-```
-kubectl describe pod my-first-pod
-```
+ 
 ```
  kubectl run my-pod --port=80 --image=nginx
 ```
-```
- kubectl run my-pod --port=80 --image=nginx
-```
+ 
   ## Kubernetes Object 
 
    1. Pods - smallest deployment unit of the k8s 
@@ -85,7 +82,7 @@ kubectl rollout undo <deployment_name>
 ```
 7. Create deployment through command and move into new file.
 ```
-kubectl create deploy <deploy_name> --image=nginx --dry-run=client
+kubectl create deploy <deploy_name> --image=nginx --dry-run=client -o yaml > deploy.yml
 ```
 
 ---
