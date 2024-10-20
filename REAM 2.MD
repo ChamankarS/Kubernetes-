@@ -31,15 +31,16 @@ kubectl get -o wide nodes
 ```
 ```
 kubectl explain rc  #detail info about particular object
-
 ```
 ```
 kubectl describe pod my-first-pod
 ```
 ```
  kubectl run my-pod --port=80 --image=nginx
- ```
-  
+```
+```
+ kubectl run my-pod --port=80 --image=nginx
+```
   ## kubernetes Object 
 
    1.Pods -smallest deployment unit of the k8s 
@@ -50,6 +51,9 @@ kubectl describe pod my-first-pod
       * Loadbalancer -> expose app outside the cluster
    4. Namespace
    5. Replicaset
+   ## Saveral way to scale the pod
+   1.Update the yaml file
+   2.
    6. Deployement
    7. DaemonSet
    8. statefulset
