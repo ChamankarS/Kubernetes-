@@ -41,18 +41,16 @@ kubectl describe pod my-first-pod
 ```
  kubectl run my-pod --port=80 --image=nginx
 ```
-  ## kubernetes Object 
+  ## Kubernetes Object 
 
-   1.Pods -smallest deployment unit of the k8s 
-   2.Nodes-worker nodes
-   3.service-Expose application outside the cluster/conatiner
+   1. Pods -smallest deployment unit of the k8s 
+   2. Nodes-worker nodes
+   3. service-Expose application outside the cluster/conatiner
       * ClusterIP -> interal communication inside the cluster
       * Nodeport -> expose app outside the cluster
       * Loadbalancer -> expose app outside the cluster
    4. Namespace
    5. Replicaset
-  
-
    6. Deployement
    7. DaemonSet
    8. statefulset
@@ -62,7 +60,7 @@ kubectl describe pod my-first-pod
    12. RBAC
    13. Ingress Gateway
 
- ## Saveral way to scale the pod
+## Saveral way to scale the pod
    1. Update the yaml file
    2. Apply changes on the live object
 ```
