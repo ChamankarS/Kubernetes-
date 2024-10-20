@@ -46,11 +46,12 @@ kubectl explain rc  #detail info about particular object
       * ClusterIP -> interal communication inside the cluster
       * Nodeport -> expose app outside the cluster
       * Loadbalancer -> expose app outside the cluster
+      * ExternalName 
    4. Namespace
    5. Replicaset
    6. Deployement
    7. DaemonSet
-   8. statefulset
+   8. Statefulset
    9. ConfigMap
    10. Secrets
    11. Pv and Pvc
