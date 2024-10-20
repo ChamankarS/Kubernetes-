@@ -6,7 +6,7 @@ spec:
   replicas: 3
   selector:
     app: my-app
-  template:
+  template:         # This configuration inside template is for pod 
     metadata:
       labels:
         app: my-app
